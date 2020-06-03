@@ -31,11 +31,10 @@ jobs:
     - name: Install YARN
     - uses: borales/actions-yarn@v2.0.0
       with:
-        run:  |         
-          curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - 
-          echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-          sudo apt update
-          sudo apt install yarn
+        cmd: |
+         curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - 
+         echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+         sudo apt update && sudo apt install yarn
     - name: Build React App
       run: yarn build
     - name: Install Surge
