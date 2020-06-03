@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: React Deployment
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -29,7 +29,6 @@ jobs:
 #    - uses: borales/actions-yarn@v2.0.0
 #     with:
 #        cmd: install # will run `yarn install` command
-    
     - uses: borales/actions-yarn@v2.0.0
     - name: Install YARN
       run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - ; echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list; sudo apt update && sudo apt install yarn
